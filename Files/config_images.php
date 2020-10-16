@@ -6,7 +6,7 @@ if(isset($_POST["submit"]))
     $image=$_POST["image"];
     $imgname=$_POST["imgname"];
     $likes=$_POST["likes"];
- 
+    $caption = $_POST["caption"];
 
 function OpenCon()
  {
@@ -38,10 +38,9 @@ $sql_images = "CREATE TABLE IF NOT EXISTS images(
     uid VARCHAR(16) NOT NULL,
     image LONGTEXT NOT NULL,
     imgname VARCHAR(20) NOT NULL,
-    likes INT(255) NOT NULL
+    likes INT(255) NOT NULL,
+    caption VARCHAR(300) NOT NULL
 )";
-
-
 
 
 if( $conn->query($sql_images) === true ){
@@ -51,8 +50,6 @@ if( $conn->query($sql_images) === true ){
 }
 
  
-
-
 $sql1="INSERT INTO persons SET id='$id', first_name='$fn', last_name='$ln', email='$email'";
 if($conn->query($sql1) === true){
     echo "Inserted into table successfully.";
