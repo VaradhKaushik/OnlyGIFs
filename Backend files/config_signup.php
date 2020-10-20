@@ -44,6 +44,37 @@ if($conn->query($sql_profile) === true ){
  
 
 function verify_signup(){
+	$exists=false;
+
+	$sql = "Select * from users where uid='$uid'"; 
+    
+    $result = mysqli_query($conn, $sql); 
+    
+    $num = mysqli_num_rows($result);  
+    
+    if($num == 0) { 
+        if($exists==false) { 
+                    
+            $sql = "INSERT INTO profile VALUES ('$uid',  
+                '$name', '$email' , '$password' )"; 
+    
+            $result = mysqli_query($conn, $sql); 
+    
+            if ($result) { 
+                echo "Registered Successfully!!";  
+            } 
+        }  
+        else {  
+            echo "Error registering the user!!";  
+        }       
+
+}
+    
+   if($num>0)  
+   { 
+      echo "User already exists!!";
+   }  
+      
 }
 
 $conn = OpenCon();
