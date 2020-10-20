@@ -16,19 +16,14 @@ function OpenCon()
  return $conn;
  }
  
+
 function CloseCon($conn)
  {
  $conn -> close();
  }
  
- $conn = OpenCon();
 
- if($conn === false){
-    die("ERROR: Could not connect. " . $conn->connect_error);
-}
-else
- echo "Connected Successfully";
-
+function create_table(){
 
 $sql_profile = "CREATE TABLE IF NOT EXISTS profile(
     uid VARCHAR(16) PRIMARY KEY,
@@ -40,26 +35,50 @@ $sql_profile = "CREATE TABLE IF NOT EXISTS profile(
 
 if($conn->query($sql_profile) === true ){
     echo "Table created successfully.";
-} else{
-    echo "ERROR: Could not able to execute $sql. " . $conn->error;
+}
+
+else{
+    die("ERROR: Could not able to execute $sql. " . $conn->error);
+}
+
+ }
+
+
+function verify_login()
+{
+        $result1 = mysql_query("SELECT uid , password FROM profile WHERE uid = '".$uid."' AND  password = '".$password."'");
+
+        if(mysql_num_rows($result1) > 0 )
+        { 
+            $_SESSION["logged_in"] = true; 
+            $_SESSION["uid"] = $uid; 
+        }
+        else
+        {
+            echo 'The username or password are incorrect!';
+        }
+}
+
+
+
+
+$conn = OpenCon();
+
+ if($conn === false){
+    die("ERROR: Could not connect. " . $conn->connect_error);
+}
+else
+ echo "Connected Successfully";
+
+create_table();
+verify_login();
+
+CloseCon($conn);
+
 }
 
  
 
-$sql_insert="";
-
-if($conn->query($sql_insert) === true){
-    echo "Inserted into table successfully.";
-} else{
-    echo "ERROR: Could not able to execute $sql1. " . $conn->error;
-}
-
- 
- CloseCon($conn);
-
-}
-
- 
 
 ?>
 
