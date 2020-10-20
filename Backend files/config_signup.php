@@ -85,6 +85,8 @@ $conn = OpenCon();
 else
  echo "Connected Successfully";
  
+verify_signup();
+
  CloseCon($conn);
 
 }
