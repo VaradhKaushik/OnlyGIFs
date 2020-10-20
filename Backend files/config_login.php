@@ -1,12 +1,9 @@
 <?php
 if(isset($_POST["submit"]))
 {
-    $imgid=$_POST["imgid"];
     $uid=$_POST["uid"];
-    $image=$_POST["image"];
-    $imgname=$_POST["imgname"];
-    $likes=$_POST["likes"];
-    $caption = $_POST["caption"];
+    $password=$_POST["password"];
+ 
 
 function OpenCon()
  {
@@ -25,43 +22,47 @@ function CloseCon($conn)
  }
  
  $conn = OpenCon();
+
  if($conn === false){
     die("ERROR: Could not connect. " . $conn->connect_error);
 }
 else
  echo "Connected Successfully";
 
- 
 
-$sql_images = "CREATE TABLE IF NOT EXISTS images(
-    imgid VARCHAR(10) AUTO_INCREMENT PRIMARY KEY ,
-    uid VARCHAR(16) NOT NULL,
-    image LONGTEXT NOT NULL,
-    imgname VARCHAR(20) NOT NULL,
-    likes INT(255) NOT NULL,
-    caption VARCHAR(300) NOT NULL
+$sql_profile = "CREATE TABLE IF NOT EXISTS profile(
+    uid VARCHAR(16) PRIMARY KEY,
+    name VARCHAR(30) NOT NULL,
+    email VARCHAR(70) NOT NULL UNIQUE,
+    password VARCHAR(30) NOT NULL,
 )";
 
 
-if( $conn->query($sql_images) === true ){
+if($conn->query($sql_profile) === true ){
     echo "Table created successfully.";
 } else{
     echo "ERROR: Could not able to execute $sql. " . $conn->error;
 }
 
  
-$sql1="INSERT INTO persons SET id='$id', first_name='$fn', last_name='$ln', email='$email'";
-if($conn->query($sql1) === true){
+
+$sql_insert="";
+
+if($conn->query($sql_insert) === true){
     echo "Inserted into table successfully.";
 } else{
     echo "ERROR: Could not able to execute $sql1. " . $conn->error;
 }
 
-
-
+ 
  CloseCon($conn);
+
 }
 
  
 
 ?>
+
+
+
+
