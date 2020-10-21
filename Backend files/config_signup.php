@@ -57,10 +57,14 @@ function verify_signup(){
                     
             $sql = "INSERT INTO profile VALUES ('$uid',  
                 '$name', '$email' , '$password' )"; 
-    
+        
             $result = mysqli_query($conn, $sql); 
     
             if ($result) { 
+
+                $_SESSION["logged_in"] = true; 
+                $_SESSION["uid"] = $uid; 
+                
                 echo "Registered Successfully!!";  
             } 
         }  
