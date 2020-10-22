@@ -1,7 +1,17 @@
 <?php
 
- $uid=$_SESSION["uid"];
-    
+ $uid = $_SESSION["uid"];
+ $name = $_SESSION["name"]; 
+ $email = $_SESSION["email"]; 
+ //Fetch the image still remaining
+$current_pass = $_POST["current_pass"];
+$new_pass = $_POST["new_pass"];
+
+
+//Code for putting  these values in respective text fields 
+function set_values(){}
+
+
 function OpenCon()
  {
  $dbhost = "localhost";
@@ -19,27 +29,38 @@ function CloseCon($conn)
  }
   
 
-function get_user_details(){
+function edit_user_details(){
 
-	$sql = "Select * from users where uid='$uid'"; 
+$fetch_pass = "SELECT password from profile where uid = '$uid'"
+
+if ($result_pass = mysqli_query($link, $fetch_pass)) {
+	$row_pass = mysqli_fetch_assoc($result_pass)
+
+	if ($current_pass == $row_pass["password"]) {
+
+	$sql = "UPDATE profile SET name = '$name' , email = '$email' , password = '$new_pass' WHERE uid= '$uid' "; 
     
 	if ($result = mysqli_query($link, $sql)) {
+			echo "Information updated Successfully!!";
+		}
+	else{
+		echo "There was error in updating info! Try again!";
+	}
 
-		$_SESSION["name"] = $row["name"]; 
-        $_SESSION["email"] = $row["email"]; 
+	}
 
-  		$row = mysqli_fetch_assoc($result)
-        print("%s %s %s %s\n", $row["name"], $row["email"],$row["uid"],$row["password"]);
-    
-    	mysqli_free_result($result);
+	else{
+		echo "Wrong current password!!!";
+	}
+
 }
 
 else{
-
+	echo "SQL Connection error!!";
 }
+
 }
     
-
 
 $conn = OpenCon();
 
@@ -49,7 +70,7 @@ $conn = OpenCon();
 else
  echo "Connected Successfully";
  
-get_user_details();
+edit_user_details();
 
  CloseCon($conn);
 
