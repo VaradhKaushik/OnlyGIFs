@@ -21,23 +21,9 @@ function CloseCon($conn)
 
 function get_user_details(){
 
-	$sql = "Select * from users where uid='$uid'"; 
-    
-	if ($result = mysqli_query($link, $sql)) {
-
-		$_SESSION["name"] = $row["name"]; 
-        $_SESSION["email"] = $row["email"]; 
-
-  		$row = mysqli_fetch_assoc($result)
-        print("%s %s %s %s\n", $row["name"], $row["email"],$row["uid"],$row["password"]);
-    
-    	mysqli_free_result($result);
+        print("%s %s %s %s\n", $_SESSION["name"], $_SESSION["email"],$_SESSION["uid"]);
 }
 
-else{
-
-}
-}
     
 
 

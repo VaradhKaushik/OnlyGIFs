@@ -46,19 +46,24 @@ else{
 
 function verify_login()
 {
-        $result1 = mysql_query("SELECT uid , password FROM profile WHERE uid = '".$uid."' AND  password = '".$password."'");
+        $result1 = mysql_query("SELECT * FROM profile WHERE uid = '".$uid."' AND  password = '".$password."'");
 
         if(mysql_num_rows($result1) > 0 )
         { 
-            $_SESSION["logged_in"] = true; 
-            $_SESSION["uid"] = $uid; 
+
+      	$row_pass = mysqli_fetch_assoc($result1)
+
+        $_SESSION["logged_in"] = true; 
+        $_SESSION["uid"] = $uid;
+        $_SESSION["name"] = $row_pass["name"];
+        $_SESSION["email"] = $row_pass["email"];
+         
         }
         else
         {
-            echo 'The username or password are incorrect!';
+            echo 'The user does not exist!';
         }
 }
-
 
 
 

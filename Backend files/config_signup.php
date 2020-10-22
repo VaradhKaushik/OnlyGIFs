@@ -64,6 +64,8 @@ function verify_signup(){
 
                 $_SESSION["logged_in"] = true; 
                 $_SESSION["uid"] = $uid; 
+                $_SESSION["name"] = $name;
+                $_SESSION["email"] = $email;
                 
                 echo "Registered Successfully!!";  
             } 
