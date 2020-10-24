@@ -1,8 +1,8 @@
 <?php
-if(isset($_POST["submit"]))
+if(isset($_POST["submit_signup"]))
 {
     $uid=$_POST["uid"];
-    $name=$_POST["name"];
+    $name=$_POST["Name"];
     $email=$_POST["email"];
     $password=$_POST["password"];
  
@@ -82,6 +82,7 @@ function verify_signup(){
    }  
       
 }
+
 
 $conn = OpenCon();
 

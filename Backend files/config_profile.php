@@ -1,11 +1,8 @@
 <?php
-if(isset($_POST["submit"]))
-{
-    $uid=$_POST["uid"];
-    $name=$_POST["name"];
-    $email=$_POST["email"];
-    $password=$_POST["password"];
- 
+
+$email_login=$_POST["email_login"];
+$password_login=$_POST["password_login"];
+echo $email_login;
 
 function OpenCon()
  {
@@ -23,73 +20,48 @@ function CloseCon($conn)
  $conn -> close();
  }
  
- $conn = OpenCon();
+
+function verify_login($conn, $email_login , $password_login)
+{
+        $result_login = mysqli_query($conn,"SELECT * FROM profile WHERE email = '$email_login' AND  password = '$password_login'");
+
+        if(mysqli_num_rows($result_login) > 0 )
+        { 
+
+      	$row_pass = mysqli_fetch_assoc($result_login);
+
+        $_SESSION["logged_in"] = true; 
+        $_SESSION["uid"] = $row_pass["uid"];
+        $_SESSION["name"] = $row_pass["name"];
+        $_SESSION["email"] = $row_pass["email"];
+        
+        echo "<script> alert('Logged In'); </script>";
+        echo "<script> location.href='HomePage.html'; </script>";
+        exit;
+        }
+        else
+        {
+            echo 'The user does not exist or the password is wrong!';
+        }
+}
+
+$conn = OpenCon();
+
  if($conn === false){
     die("ERROR: Could not connect. " . $conn->connect_error);
 }
 else
  echo "Connected Successfully";
 
- 
+verify_login($conn , $email_login , $password_login);
+
+CloseCon($conn);
 
 
-$sql_profile = "CREATE TABLE IF NOT EXISTS profile(
-    uid VARCHAR(16) PRIMARY KEY,
-    name VARCHAR(30) NOT NULL,
-    email VARCHAR(70) NOT NULL UNIQUE,
-    password VARCHAR(30) NOT NULL,
-)";
-
-
-
-if($conn->query($sql_profile) === true ){
-    echo "Table created successfully.";
-} else{
-    echo "ERROR: Could not able to execute $sql. " . $conn->error;
-}
-
- 
-
-$sql_insert="INSERT INTO profile SET uid='$uid', name='$name', email='$email', password='$password' ";
-
-if($conn->query($sql_insert) === true){
-    echo "Inserted into table successfully.";
-} else{
-    echo "ERROR: Could not able to execute $sql1. " . $conn->error;
-}
-
- 
- CloseCon($conn);
-
-}
-
- 
 
 ?>
 
-<!-- // $sql3 = "SELECT * FROM persons";  
-// $result = $conn->query($sql3);
 
- 
-
-// if ($result->num_rows> 0) {
-//   // output data of each row
-//   while($row = $result->fetch_assoc()) {
-//     echo "id: " . $row["id"]. " Name: " . $row["first_name"]. " " . $row["last_name"]."Email: " . $row["email"]."<br>";
-//   }
-// }
-
- 
-
-
-//  $sql4 = "UPDATE persons SET first_name='hii.hello' WHERE id=2";
-//   if ($conn->query($sql4) === TRUE) {
-//     echo "Update successful.";
-//   } else {
-//     echo "Could not update: " . $conn->error;
-//   } -->
-
- 
 
 
 

@@ -32,13 +32,15 @@
 
 <body>
     <div class="login-dark" style="background: url(&quot;assets/img/homer_sleep.gif&quot;) center / cover no-repeat;height: 1080px;">
-        <form method="post" style="opacity: 0.87;background: #412600;">
+        <form method="post" style="opacity: 0.87;background: #412600;" action="http://localhost/config_login.php">
             <h1 style="color: rgb(255,130,0);">&nbsp; &nbsp; OnlyGIFs</h1>
             <div class="illustration"><i class="icon ion-camera" style="color: rgb(255,130,0);"></i></div>
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="color: rgb(255,255,255);background: rgb(255,130,0);">Log In</button></div><a class="forgot" href="#">Forgot your email or password?</a></form>
+            <div class="form-group"><input class="form-control" type="email" id="email_login" name="email_login" placeholder="Email"></div>
+            <div class="form-group"><input class="form-control" type="password" id="password_login" name="password_login" placeholder="Password"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="color: rgb(255,255,255);background: rgb(255,130,0);">Log In</button></div>
+            <a class="forgot" href="#">Forgot your email or password?</a></form>
     </div>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
@@ -50,3 +52,4 @@
 </body>
 
 </html>
+

@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="assets/css/Team-Clean.css">
 </head>
 
-<body style="height: 1080px;background: rgba(255,255,255,0);">
+<body style="height: 1080px;background: rgba(255,255,255,0);" onload="get_details()">
     <nav class="navbar navbar-light navbar-expand-md fixed-top" style="color: #ffffff;background: #322f2f;height: 50px;width: 100vw;">
         <div class="container-fluid"><a class="navbar-brand" href="#" style="color: #ffffff;font-size: 31px;margin-top: -15px;">OnlyGIFs</a>
             <ul class="nav navbar-nav">
@@ -53,6 +53,34 @@
     </form>
     </div>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+   
+    <script>
+  // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyDLHqpZO00CXc0yInlmkJzkDUXmsoC1oGU",
+            authDomain: "onlygif-24.firebaseapp.com",
+            databaseURL: "https://onlygif-24.firebaseio.com",
+            projectId: "onlygif-24",
+            storageBucket: "onlygif-24.appspot.com",
+            messagingSenderId: "903905867060",
+            appId: "1:903905867060:web:27dd3eac106d86c3762161"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+
+        
+        function get_details()
+        {
+            var user = firebase.auth().currentUser;
+            alert(user.uid);
+        }
+        
+    </script>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
