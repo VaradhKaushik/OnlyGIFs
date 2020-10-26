@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="height: 1080px;">
+<html style="height: 1080px;background: url(&quot;assets/img/HTTYD_Thumbs_up.gif&quot;) center / cover;">
 
 <head>
     <meta charset="utf-8">
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/Carousel_Image_Slider-1.css">
     <link rel="stylesheet" href="assets/css/Carousel_Image_Slider.css">
     <link rel="stylesheet" href="assets/css/Custom-File-Upload.css">
+    <link rel="stylesheet" href="assets/css/Drag--Drop-Upload-Form.css">
     <link rel="stylesheet" href="assets/css/Drag-and-Drop-Multiple-File-Form-Input-upload-Advanced.css">
     <link rel="stylesheet" href="assets/css/Drag-Drop-File-Input-Upload.css">
     <link rel="stylesheet" href="assets/css/Footer-Dark.css">
@@ -33,11 +34,12 @@
     <link rel="stylesheet" href="assets/css/Profile-Edit-Form.css">
     <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
     <link rel="stylesheet" href="assets/css/Simple-Slider.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Team-Clean.css">
 </head>
 
-<body style="height: 1080px;">
+<body style="height: 1080px;background: rgba(255,255,255,0);width: 1920px;">
     <nav class="navbar navbar-light navbar-expand-md fixed-top" style="color: #ffffff;background: #322f2f;height: 50px;width: 100vw;">
         <div class="container-fluid"><a class="navbar-brand" href="#" style="color: #ffffff;font-size: 31px;margin-top: -15px;">OnlyGIFs</a>
             <ul class="nav navbar-nav">
@@ -47,6 +49,12 @@
             </ul>
         </div>
     </nav>
+    <form style="margin-top: 225px;margin-left: 1215px;width: 228px;height: 184px;background: rgba(255,255,255,0.25);">
+        <div style="width: 200px;background: rgba(255,255,255,0);height: 184px;"><input type="file" id="user_group_logo" class="custom-file-input" accept="image/*" name="user_group_logo">
+            <div class="text-center"><label id="user_group_label" for="user_group_logo" style="margin-left: 19px;"><i class="fas fa-upload"></i>&nbsp;Choose an image...</label></div>
+            <div class="text-center mt-2"><button class="btn btn-primary" type="submit">Upload</button></div>
+        </div>
+    </form>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
@@ -56,6 +64,7 @@
     <script src="assets/js/Drag-and-Drop-Multiple-File-Form-Input-upload-Advanced.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+    <script src="assets/js/InfiniteScroll.js"></script>
     <script src="assets/js/Profile-Edit-Form.js"></script>
     <script src="assets/js/Simple-Slider.js"></script>
 </body>
