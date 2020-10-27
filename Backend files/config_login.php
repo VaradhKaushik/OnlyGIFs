@@ -37,7 +37,7 @@ function verify_login($conn, $email_login , $password_login)
         $_SESSION["email"] = $row_pass["email"];
         
         echo "<script> alert('Logged In'); </script>";
-        echo "<script> location.href='http://localhost/HomePage.html'; </script>";
+        echo "<script> location.href='http://localhost/HomePage.php'; </script>";
         exit;
         }
         else
