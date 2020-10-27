@@ -1,11 +1,10 @@
 <?php
-if(isset($_POST["submit"]))
-{
-    $uid=$_POST["uid"];
-    $name=$_POST["name"];
+
+    $uid=$_POST["UID"];
+    $name=$_POST["Name"];
     $email=$_POST["email"];
     $password=$_POST["password"];
- 
+    echo $uid;
 
 function OpenCon()
  {
@@ -25,36 +24,33 @@ function CloseCon($conn)
  
 
 
-function create_table(){
+function create_table($conn){
 $sql_profile = "CREATE TABLE IF NOT EXISTS profile(
     uid VARCHAR(16) PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
     email VARCHAR(70) NOT NULL UNIQUE,
-    password VARCHAR(30) NOT NULL,
-)";
+    password VARCHAR(30) NOT NULL)";
 
 
-if($conn->query($sql_profile) === true ){
+if($conn->query($sql_profile) == true ){
     echo "Table created successfully.";
 } else{
-    die("ERROR: Could not able to execute $sql. " . $conn->error);
+    echo "ERROR: Could not able to execute";
 }
 
  }
  
 
-function verify_signup(){
+function verify_signup($conn,$uid , $password , $email , $name){
 	$exists=false;
 
-	$sql = "Select * from users where uid='$uid'"; 
+	$sql = "Select * from profile where uid = '$uid' "; 
     
     $result = mysqli_query($conn, $sql); 
     
     $num = mysqli_num_rows($result);  
     
-    if($num == 0) { 
-        if($exists==false) { 
-                    
+    if($num == 0) {           
             $sql = "INSERT INTO profile VALUES ('$uid',  
                 '$name', '$email' , '$password' )"; 
         
@@ -69,19 +65,19 @@ function verify_signup(){
                 
                 echo "Registered Successfully!!";  
             } 
-        }  
+          
         else {  
             echo "Error registering the user!!";  
         }       
 
 }
-    
-   if($num>0)  
-   { 
+else  
+{ 
       echo "User already exists!!";
-   }  
+}  
       
 }
+
 
 $conn = OpenCon();
 
@@ -91,13 +87,11 @@ $conn = OpenCon();
 else
  echo "Connected Successfully";
  
-verify_signup();
+create_table($conn);
+verify_signup($conn,$uid , $password , $email , $name);
 
  CloseCon($conn);
 
-}
-
- 
 
 ?>
 

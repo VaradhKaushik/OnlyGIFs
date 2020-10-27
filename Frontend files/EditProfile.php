@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html style="background: url(&quot;assets/img/kermit_typing.gif&quot;) center / cover no-repeat;height: 1080px;">
 
@@ -51,12 +56,19 @@
     </nav>
     <div class="register-photo" style="width: 939px;margin-left: 267px;margin-top: 230px;background: rgba(78,104,47,0.56);">
         <div class="form-container">
-            <form method="post" style="background: rgba(23,24,23,0.56);">
-                <h2 class="text-center" style="color: rgb(255,255,255);"><strong>Edit Profile Details</strong></h2><small class="form-text text-white-50" style="color: #ffffff;font-size: 17px;text-align: center;">UID</small>
-                <div class="form-group"><input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="color: #ffffff;font-size: 17px;text-align: center;"></div><small class="form-text text-white-50" style="color: #ffffff;font-size: 17px;text-align: center;">Username<input class="form-control" type="text" style="background: rgba(255,255,255,0.2);"></small>
+            <form method="post" style="background: rgba(23,24,23,0.56);" action="http://localhost/config_edit_profile_details.php">
+                <h2 class="text-center" style="color: rgb(255,255,255);"><strong>Edit Profile Details</strong></h2>
+                <small class="form-text text-white-50" style="color: #ffffff;font-size: 17px;text-align: center;">UID</small>
+                <div class="form-group"><input class="form-control-plaintext" type="text" name="edit_uid" id="edit_uid" value="<?php echo $_SESSION['uid']; ?>" style="color: #ffffff;font-size: 17px;text-align: center;">
+                </div>
+
+                <small class="form-text text-white-50" style="color: #ffffff;font-size: 17px;text-align: center;">Username<input class="form-control" name="edit_name" id="edit_name" value="<?php echo $_SESSION['name']; ?>" type="text" style="background: rgba(255,255,255,0.2);"></small>
+
                 <small
-                    class="form-text text-white-50" style="color: #ffffff;font-size: 17px;text-align: center;">Email</small><input class="form-control" type="text" style="background: rgba(255,255,255,0.2);">
-                    <div class="form-group"><a class="btn btn-primary btn-block" role="button" href="EditProfile.html">Save Changes</a></div>
+                    class="form-text text-white-50" style="color: #ffffff;font-size: 17px;text-align: center;">Email<input class="form-control" name="edit_email" id="edit_email" type="text" value="<?php echo $_SESSION['email']; ?>" style="background: rgba(255,255,255,0.2);"></small>
+
+                <div class="form-group"><a class="btn btn-primary btn-block" type="submit">Save Changes</a></div>
+                
             </form>
         </div>
     </div>

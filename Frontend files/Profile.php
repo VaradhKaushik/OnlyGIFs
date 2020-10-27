@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html style="background: url(&quot;assets/img/batman_interesting.gif&quot;) top / cover;">
 
@@ -53,12 +57,19 @@
         <div class="form-container">
             <form method="post" style="background: rgba(173,134,163,0.41);">
                 <h2 class="text-center" style="color: rgb(255,255,255);"><strong>Profile Details</strong></h2><small class="form-text text-white-50" style="color: #ffffff;font-size: 17px;text-align: center;">UID</small>
-                <div class="form-group"><input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="color: #ffffff;font-size: 17px;text-align: center;"></div><small class="form-text text-white-50" style="color: #ffffff;font-size: 17px;text-align: center;">Username</small>
+
+                <div class="form-group"><input class="form-control-plaintext" type="text" value="<?php echo $_SESSION['uid']; ?>" style="color: #ffffff;font-size: 17px;text-align: center;"></div>
+
+                <small class="form-text text-white-50" style="color: #ffffff;font-size: 17px;text-align: center;">Name</small>
+
                 <div
-                    class="form-group"><input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="color: #ffffff;font-size: 17px;text-align: center;"></div><small class="form-text text-white-50" style="color: #ffffff;font-size: 17px;text-align: center;">Email</small>
+                    class="form-group"><input class="form-control-plaintext" type="text" value="<?php echo $_SESSION['name']; ?>" style="color: #ffffff;font-size: 17px;text-align: center;"></div>
+
+                    <small class="form-text text-white-50" style="color: #ffffff;font-size: 17px;text-align: center;">Email</small>
         <div
-            class="form-group"><input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="color: #ffffff;font-size: 17px;text-align: center;"></div>
-    <div class="form-group"><a class="btn btn-primary btn-block" role="button" href="EditProfile.html">Edit Profile</a></div>
+            class="form-group"><input class="form-control-plaintext" type="text" value="<?php echo $_SESSION['email']; ?>"style="color: #ffffff;font-size: 17px;text-align: center;"></div>
+
+    <div class="form-group"><a class="btn btn-primary btn-block" role="button" href="EditProfile.php">Edit Profile</a></div>
     </form>
     </div>
     </div>
