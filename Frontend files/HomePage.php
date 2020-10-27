@@ -8,7 +8,7 @@ $x=7;
 <html>
 
 <head>
-    <meta charset="utf-8">
+   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>OnlyGifs</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -115,9 +115,11 @@ $x=7;
     <nav class="navbar navbar-light navbar-expand-md fixed-top" style="color: #ffffff;background: #322f2f;height: 50px;width: 100vw;">
         <div class="container-fluid"><a class="navbar-brand" href="#" style="color: #ffffff;font-size: 31px;margin-top: -15px;">OnlyGIFs</a>
             <ul class="nav navbar-nav">
-                <li class="nav-item"><a class="nav-link active" href="Profile.php" style="color: #ffffff;margin-left: 935px;font-size: 19px;margin-top: -15px;">Profile</a></li>
+                <li class="nav-item" style="margin-left: -129px;"><a class="nav-link active" href="Profile.html" style="color: #ffffff;margin-left: 935px;font-size: 19px;margin-top: -15px;">Profile</a></li>
                 <li class="nav-item"><a class="nav-link" href="LikedImages.html" style="color: #ffffff;font-size: 19px;margin-top: -15px;">Liked Images</a></li>
-                <li class="nav-item"><a class="nav-link" href="Start.html" style="color: #ffffff;font-size: 19px;margin-top: -15px;">Logout</a></li>
+                <li class="nav-item"><a class="nav-link" href="AddImage.html" style="color: #ffffff;font-size: 19px;margin-top: -15px;margin-left: -678px;width: 198px;background: url(&quot;assets/img/upload_me_harder_daddy.png&quot;) no-repeat;background-size: contain;">&nbsp; &nbsp; &nbsp; &nbsp; Upload GIF</a></li>
+                <li
+                    class="nav-item"><a class="nav-link" href="Start.html" style="color: #ffffff;font-size: 19px;margin-top: -15px;">Logout</a></li>
             </ul>
         </div>
     </nav>
