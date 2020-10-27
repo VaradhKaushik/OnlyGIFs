@@ -70,13 +70,15 @@ function verify_signup($conn,$uid , $password , $email , $name){
             } 
           
         else {  
-            echo "Error registering the user!!";  
+        	echo "<script> alert('Error registering the user!!'); </script>";
+       		echo "<script> location.href='http://localhost/SignUp.html'; </script>";  
         }       
 
 }
 else  
 { 
-      echo "User already exists!!";
+	echo "<script> alert('User already exists!!'); </script>";
+    echo "<script> location.href='http://localhost/SignUp.html'; </script>";
 }  
       
 }

@@ -42,7 +42,8 @@ function verify_login($conn, $email_login , $password_login)
         }
         else
         {
-            echo 'The user does not exist or the password is wrong!';
+            echo "<script> alert('The user does not exist or the password is wrong!!'); </script>";
+            echo "<script> location.href='http://localhost/Login.html'; </script>";
         }
 }
 

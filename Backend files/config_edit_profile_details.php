@@ -29,6 +29,11 @@ function edit_user_details($conn,$name,$email,$uid){
 	$sql = "UPDATE profile SET name = '$name' , email = '$email' WHERE uid= '$uid' "; 
     
 	if ($result = mysqli_query($conn, $sql)) {
+
+		$_SESSION["uid"] = $uid;
+        $_SESSION["name"] = $name;
+        $_SESSION["email"] = $email;
+
 		echo "<script> alert('Information updated Successfully!!'); </script>";
         echo "<script> location.href='http://localhost/HomePage.html'; </script>";
 	}
