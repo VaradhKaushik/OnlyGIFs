@@ -65,7 +65,8 @@ function verify_signup($conn,$uid , $password , $email , $name){
                 $_SESSION["email"] = $email;
                 
                 echo "<script> alert('Registers Successfully!!'); </script>";
-       			echo "<script> location.href='http://localhost/HomePage.html'; </script>"; 
+       			echo "<script> location.href='http://localhost/HomePage.html'; </script>";
+       			exit; 
             } 
           
         else {  

@@ -67,7 +67,7 @@ session_start();
                 <small
                     class="form-text text-white-50" style="color: #ffffff;font-size: 17px;text-align: center;">Email<input class="form-control" name="edit_email" id="edit_email" type="text" value="<?php echo $_SESSION['email']; ?>" style="background: rgba(255,255,255,0.2);"></small>
 
-                <div class="form-group"><a class="btn btn-primary btn-block" type="submit">Save Changes</a></div>
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Save Changes</button></div>
                 
             </form>
         </div>

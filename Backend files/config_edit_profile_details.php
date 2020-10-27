@@ -1,4 +1,5 @@
 <?php
+session_start();
 
  $uid = $_POST["edit_uid"];
  $name = $_POST["edit_name"]; 
@@ -25,30 +26,16 @@ function CloseCon($conn)
 
 function edit_user_details($conn,$name,$email,$uid){
 
-	// $fetch_pass = "SELECT password from profile where uid = '$uid'"
-
-	// if ($result_pass = mysqli_query($link, $fetch_pass)) {
-	// $row_pass = mysqli_fetch_assoc($result_pass)
-
-	// if ($current_pass == $row_pass["password"]) {
-
 	$sql = "UPDATE profile SET name = '$name' , email = '$email' WHERE uid= '$uid' "; 
     
 	if ($result = mysqli_query($conn, $sql)) {
-		echo "<script> alert('Information updated Successfully!!'); </script>";}
+		echo "<script> alert('Information updated Successfully!!'); </script>";
+        echo "<script> location.href='http://localhost/HomePage.html'; </script>";
+	}
 	else{
 		echo "<script> alert('There was error in updating info! Try again!'); </script>";}
-	// }
-	else{
-		echo "<script> alert('Wrong Current Password!!'); </script>";}
+
 }
-
-// else{
-// 	echo "SQL Connection error!!";
-// }
-
-// }
-    
 
 $conn = OpenCon();
 
