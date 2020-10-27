@@ -1,10 +1,11 @@
 <?php
 
+session_start();
+
     $uid=$_POST["UID"];
     $name=$_POST["Name"];
     $email=$_POST["email"];
     $password=$_POST["password"];
-    echo $uid;
 
 function OpenCon()
  {
@@ -63,7 +64,8 @@ function verify_signup($conn,$uid , $password , $email , $name){
                 $_SESSION["name"] = $name;
                 $_SESSION["email"] = $email;
                 
-                echo "Registered Successfully!!";  
+                echo "<script> alert('Registers Successfully!!'); </script>";
+       			echo "<script> location.href='http://localhost/HomePage.html'; </script>"; 
             } 
           
         else {  
