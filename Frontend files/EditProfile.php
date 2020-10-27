@@ -48,7 +48,7 @@ session_start();
     <nav class="navbar navbar-light navbar-expand-md fixed-top" style="color: #ffffff;background: #322f2f;height: 50px;width: 100%;">
         <div class="container-fluid"><a class="navbar-brand" href="#" style="color: #ffffff;font-size: 31px;margin-top: -15px;">OnlyGIFs</a>
             <ul class="nav navbar-nav">
-                <li class="nav-item" style="margin-left: 50px;"><a class="nav-link active" href="HomePage.html" style="color: #ffffff;margin-left: -373px;font-size: 21px;margin-top: -15px;width: 91px;">Home</a></li>
+                <li class="nav-item" style="margin-left: 50px;"><a class="nav-link active" href="HomePage.php" style="color: #ffffff;margin-left: -373px;font-size: 21px;margin-top: -15px;width: 91px;">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="LikedImages.html" style="color: #ffffff;font-size: 21px;margin-top: -15px;margin-left: -259px;width: 147px;">Liked Images</a></li>
                 <li class="nav-item"><a class="nav-link" href="Start.html" style="color: #ffffff;font-size: 21px;margin-top: -15px;margin-left: -100px;">Logout</a></li>
             </ul>

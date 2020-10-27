@@ -139,7 +139,7 @@ $x=7;
         <div class="card" style="width: 640px;"><img class="card-img-top w-100 d-block" style="height: 320px;border-style: none;" id="2" src="<?php echo getImageURL($conn,2); ?>">
             <div class="card-body" style="background: #475d62;border: 1px solid #222222;">
                 <h4 class="card-title" style="color: #ffffff;font-size: 20px;text-align: left;">Username<i class="far fa-heart" data-bs-hover-animate="rubberBand" style="margin-left: 125px;"></i>
-                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh1(1)">
+                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh1(2)">
                     <i class="fa fa-refresh" data-bs-hover-animate="flash" style="align: center; "></i></button>
                 </h4>
                 <p class="card-text" style="color: rgb(255,255,255);font-size: 16px;">caption idhar aayega<br></p>
@@ -149,7 +149,7 @@ $x=7;
         <div class="card" style="width: 640px;"><img class="card-img-top w-100 d-block" style="height: 320px;border-style: none;" id="3" src="<?php echo getImageURL($conn,3); ?>">
             <div class="card-body" style="background: #475d62;border: 1px solid #222222;">
                 <h4 class="card-title" style="color: #ffffff;font-size: 20px;text-align: left;">Username<i class="far fa-heart" data-bs-hover-animate="rubberBand" style="margin-left: 125px;"></i>
-                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh1(1)">
+                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh1(3)">
                     <i class="fa fa-refresh" data-bs-hover-animate="flash" style="align: center; "></i></button>
                 </h4>
                 <p class="card-text" style="color: rgb(255,255,255);font-size: 16px;">caption idhar aayega<br></p>
@@ -161,7 +161,7 @@ $x=7;
         <div class="card" style="width: 640px;"><img class="card-img-top w-100 d-block" style="height: 320px;border-style: none;" id="4" src="<?php echo getImageURL($conn,4); ?>">
             <div class="card-body" style="background: #475d62;width: 100vw;border: 1px solid #222222;">
                 <h4 class="card-title" style="color: #ffffff;font-size: 20px;text-align: left;">Username<i class="far fa-heart" data-bs-hover-animate="rubberBand" style="margin-left: 125px;"></i>
-                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh1(1)">
+                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh1(4)">
                     <i class="fa fa-refresh" data-bs-hover-animate="flash" style="align: center; "></i></button>
                 </h4>
                 <p class="card-text" style="color: rgb(255,255,255);font-size: 16px;">caption idhar aayega</p>
@@ -171,7 +171,7 @@ $x=7;
         <div class="card" style="width: 640px;"><img class="card-img-top w-100 d-block" style="height: 320px;border-style: none;" id="5" src="<?php echo getImageURL($conn,5); ?>">
             <div class="card-body" style="background: #475d62;border: 1px solid #222222;">
                 <h4 class="card-title" style="color: #ffffff;font-size: 20px;text-align: left;">Username<i class="far fa-heart" data-bs-hover-animate="rubberBand" style="margin-left: 125px;"></i>
-                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh1(1)">
+                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh1(5)">
                     <i class="fa fa-refresh" data-bs-hover-animate="flash" style="align: center; "></i></button>
                 </h4>
                 <p class="card-text" style="color: rgb(255,255,255);font-size: 16px;">caption idhar aayega<br></p>
@@ -181,7 +181,7 @@ $x=7;
         <div class="card" style="width: 640px;"><img class="card-img-top w-100 d-block" style="height: 320px;border-style: none;" id="6" src="<?php echo getImageURL($conn,6); ?>">
             <div class="card-body" style="background: #475d62;border: 1px solid #222222;">
                 <h4 class="card-title" style="color: #ffffff;font-size: 20px;text-align: left;">Username<i class="far fa-heart" data-bs-hover-animate="rubberBand" style="margin-left: 125px;"></i>
-                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh1(1)">
+                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh1(6)">
                     <i class="fa fa-refresh" data-bs-hover-animate="flash" style="align: center; "></i></button>
                 </h4>
                 <p class="card-text" style="color: rgb(255,255,255);font-size: 16px;">caption idhar aayega<br></p>

@@ -35,7 +35,7 @@ function edit_user_details($conn,$name,$email,$uid){
         $_SESSION["email"] = $email;
 
 		echo "<script> alert('Information updated Successfully!!'); </script>";
-        echo "<script> location.href='http://localhost/HomePage.html'; </script>";
+        echo "<script> location.href='http://localhost/HomePage.php'; </script>";
 	}
 	else{
 		echo "<script> alert('There was error in updating info! Try again!'); </script>";}
