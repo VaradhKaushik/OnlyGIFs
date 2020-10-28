@@ -85,7 +85,8 @@ if(isset($_POST['but_upload'])){
           echo "<script> alert('Inserted uploaded successfully!!'); </script>";
           echo "<script> location.href='http://localhost/HomePage.php'; </script>";
         } else{
-          die("ERROR: Could not able to execute $sql1. " . $conn->error);
+          echo "<script> alert('Error while uploading!! Try Again!!'); </script>";
+          echo "<script> location.href='http://localhost/HomePage.php'; </script>";
         }
 
         # Display the uploaded image to the user ie data:image/gif;base64,AABBCC... where the latter is called the image url
