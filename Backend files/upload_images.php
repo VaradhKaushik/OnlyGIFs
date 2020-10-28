@@ -1,4 +1,5 @@
 <?php
+session_start();
 # If upload button is clicked
 if(isset($_POST['but_upload'])){
 
@@ -77,17 +78,17 @@ if(isset($_POST['but_upload'])){
 
         # image : full data path ie data:image/gif;base64,AABBCC...
         $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
-        
+        $uid = $_SESSION["uid"]; 
         #Insert the image details into the images table
-        $sql1="INSERT INTO images SET image='$image', imgname='$name', caption='$caption', likes='0' , uid = '$_SESSION["uid"]' ";
+        $sql1 = "INSERT INTO images SET image='$image', imgname='$name', caption='$caption', likes='0' , uid = '$uid' ";
         if($conn->query($sql1) === true){
-          echo "Inserted into table successfully.";
+          echo "<script> alert('Inserted uploaded successfully!!'); </script>";
+          echo "<script> location.href='http://localhost/HomePage.php'; </script>";
         } else{
           die("ERROR: Could not able to execute $sql1. " . $conn->error);
         }
 
         # Display the uploaded image to the user ie data:image/gif;base64,AABBCC... where the latter is called the image url
-        echo '<img src="data:image/gif;base64,' . $image_base64 . '" />';
 
         CloseCon($conn);
   }

@@ -44,13 +44,12 @@ session_start();
     <link rel="stylesheet" href="assets/css/Team-Clean.css">
 </head>
 
-<body style="background: rgba(85,163,235,0);">
-    <nav class="navbar navbar-light navbar-expand-md fixed-top" style="color: #ffffff;background: #322f2f;height: 50px;width: 100%;">
+<body style="height: 1080px;background: rgba(255,255,255,0);">
+    <nav class="navbar navbar-light navbar-expand-md fixed-top" style="color: #ffffff;background: #322f2f;height: 50px;width: 100vw;">
         <div class="container-fluid"><a class="navbar-brand" href="#" style="color: #ffffff;font-size: 31px;margin-top: -15px;">OnlyGIFs</a>
             <ul class="nav navbar-nav">
-                <li class="nav-item" style="margin-left: 50px;"><a class="nav-link active" href="HomePage.php" style="color: #ffffff;margin-left: -373px;font-size: 21px;margin-top: -15px;width: 91px;">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="LikedImages.html" style="color: #ffffff;font-size: 21px;margin-top: -15px;margin-left: -259px;width: 147px;">Liked Images</a></li>
-                <li class="nav-item"><a class="nav-link" href="Start.html" style="color: #ffffff;font-size: 21px;margin-top: -15px;margin-left: -100px;">Logout</a></li>
+                <li class="nav-item" style="margin-left: -407px;"><a class="nav-link active" href="HomePage.php" style="color: #ffffff;margin-left: 1300px;font-size: 21px;margin-top: -15px;">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="Start.html" style="color: #ffffff;font-size: 21px;margin-top: -15px;">Logout</a></li>
             </ul>
         </div>
     </nav>

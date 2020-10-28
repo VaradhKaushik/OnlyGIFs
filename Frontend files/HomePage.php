@@ -1,7 +1,9 @@
 <?php
 error_reporting(E_ALL);
 session_start();
-$x=7;
+$cookie_name = "img_id";
+$cookie_value = 7;
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 ?>
 
 <!DOCTYPE html>
@@ -86,7 +88,7 @@ $x=7;
         $sql2="SELECT * FROM images";
         $result_2=$conn->query($sql2);
         $rows=$result_2->num_rows;
-
+        error_log(''.$rows);
         $num=$num%$rows;
         if($num==0)
           $num=$rows;
@@ -118,9 +120,10 @@ $x=7;
     <script type="text/javascript">
 
     function refresh1(id_number){
-      <?php 
-      global $x;
-      ?>;
+    <?php
+      $x = $_COOKIE['img_id']++;
+      // echo '<script> alert('.$x.'); </script>';
+    ?>  
       document.getElementById(String(id_number)).src = "<?php echo getImageURL($conn,$x)[0]; ?>";
       var caption_id=String(id_number)+"_caption";
       document.getElementById(caption_id).innerHTML="<?php echo getImageURL($conn,$x)[1]; ?>";
@@ -128,9 +131,7 @@ $x=7;
       document.getElementById(likes_id).innerHTML="<?php echo getImageURL($conn,$x)[2]; ?>"+" likes";
       var hidden_imgid=String(id_number)+"_IMGID";
       document.getElementById(hidden_imgid).innerHTML="<?php echo $x; ?>";
-      <?php
-      ++$x;
-      ?>
+     
     }
 
     function updateLikes(id_number){
@@ -155,8 +156,7 @@ $x=7;
     <nav class="navbar navbar-light navbar-expand-md fixed-top" style="color: #ffffff;background: #322f2f;height: 50px;width: 100vw;">
         <div class="container-fluid"><a class="navbar-brand" href="#" style="color: #ffffff;font-size: 31px;margin-top: -15px;">OnlyGIFs</a>
             <ul class="nav navbar-nav">
-                <li class="nav-item" style="margin-left: -129px;"><a class="nav-link active" href="Profile.html" style="color: #ffffff;margin-left: 935px;font-size: 19px;margin-top: -15px;">Profile</a></li>
-                <li class="nav-item"><a class="nav-link" href="LikedImages.html" style="color: #ffffff;font-size: 19px;margin-top: -15px;">Liked Images</a></li>
+                <li class="nav-item" style="margin-left: -129px;"><a class="nav-link active" href="Profile.php" style="color: #ffffff;margin-left: 935px;font-size: 19px;margin-top: -15px;">Profile</a></li>
                 <li class="nav-item"><a class="nav-link" href="AddImage.html" style="color: #ffffff;font-size: 19px;margin-top: -15px;margin-left: -678px;width: 198px;background: url(&quot;assets/img/upload_me_harder_daddy.png&quot;) no-repeat;background-size: contain;">&nbsp; &nbsp; &nbsp; &nbsp; Upload GIF</a></li>
                 <li
                     class="nav-item"><a class="nav-link" href="Start.html" style="color: #ffffff;font-size: 19px;margin-top: -15px;">Logout</a></li>

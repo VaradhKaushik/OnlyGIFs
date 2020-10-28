@@ -44,12 +44,22 @@ session_start();
 </head>
 
 <body style="height: 1080px;background: rgba(255,255,255,0);">
+
+    <?php
+    function logout()
+    {
+        echo "<script> alert('Logged Out!'); </script>";
+        echo "<script> location.href='http://localhost/Start.html'; </script>";
+        exit;
+    }
+
+    ?>
+
     <nav class="navbar navbar-light navbar-expand-md fixed-top" style="color: #ffffff;background: #322f2f;height: 50px;width: 100vw;">
         <div class="container-fluid"><a class="navbar-brand" href="#" style="color: #ffffff;font-size: 31px;margin-top: -15px;">OnlyGIFs</a>
             <ul class="nav navbar-nav">
                 <li class="nav-item" style="margin-left: -407px;"><a class="nav-link active" href="HomePage.php" style="color: #ffffff;margin-left: 1300px;font-size: 21px;margin-top: -15px;">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="LikedImages.html" style="color: #ffffff;font-size: 21px;margin-top: -15px;">Liked Images</a></li>
-                <li class="nav-item"><a class="nav-link" href="Start.html" style="color: #ffffff;font-size: 21px;margin-top: -15px;">Logout</a></li>
+                <li class="nav-item"><a class="nav-link active" href="Start.html" style="color: #ffffff;font-size: 21px;margin-top: -15px;">Logout</a></li>
             </ul>
         </div>
     </nav>
