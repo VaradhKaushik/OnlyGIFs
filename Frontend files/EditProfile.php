@@ -17,31 +17,17 @@ session_start();
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="assets/css/Bootstrap-Image-Uploader.css">
-    <link rel="stylesheet" href="assets/css/Card-Carousel-1.css">
-    <link rel="stylesheet" href="assets/css/Card-Carousel.css">
-    <link rel="stylesheet" href="assets/css/Carousel_Image_Slider-1.css">
-    <link rel="stylesheet" href="assets/css/Carousel_Image_Slider.css">
-    <link rel="stylesheet" href="assets/css/Custom-File-Upload.css">
-    <link rel="stylesheet" href="assets/css/Drag--Drop-Upload-Form.css">
-    <link rel="stylesheet" href="assets/css/Drag-and-Drop-Multiple-File-Form-Input-upload-Advanced.css">
-    <link rel="stylesheet" href="assets/css/Drag-Drop-File-Input-Upload.css">
     <link rel="stylesheet" href="assets/css/Footer-Dark.css">
     <link rel="stylesheet" href="assets/css/Header-Blue.css">
     <link rel="stylesheet" href="assets/css/Header-Dark.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
     <link rel="stylesheet" href="assets/css/Lightbox-Gallery.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="assets/css/Profile-Edit-Form-1.css">
     <link rel="stylesheet" href="assets/css/Profile-Edit-Form.css">
     <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
-    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/Team-Clean.css">
 </head>
 
 <body style="height: 1080px;background: rgba(255,255,255,0);">
@@ -71,18 +57,6 @@ session_start();
             </form>
         </div>
     </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
-    <script src="assets/js/Bootstrap-Image-Uploader.js"></script>
-    <script src="assets/js/Card-Carousel.js"></script>
-    <script src="assets/js/Custom-File-Upload.js"></script>
-    <script src="assets/js/Drag-and-Drop-Multiple-File-Form-Input-upload-Advanced.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
-    <script src="assets/js/InfiniteScroll.js"></script>
-    <script src="assets/js/Profile-Edit-Form.js"></script>
-    <script src="assets/js/Simple-Slider.js"></script>
 </body>
 
 </html>
