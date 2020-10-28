@@ -81,7 +81,6 @@ $x=7;
       }
 ?>
 
-      
       <?php
       function getImageURL($conn,$num){
         $sql2="SELECT * FROM images";
@@ -156,9 +155,11 @@ $x=7;
     <nav class="navbar navbar-light navbar-expand-md fixed-top" style="color: #ffffff;background: #322f2f;height: 50px;width: 100vw;">
         <div class="container-fluid"><a class="navbar-brand" href="#" style="color: #ffffff;font-size: 31px;margin-top: -15px;">OnlyGIFs</a>
             <ul class="nav navbar-nav">
-                <li class="nav-item"><a class="nav-link active" href="Profile.php" style="color: #ffffff;margin-left: 935px;font-size: 19px;margin-top: -15px;">Profile</a></li>
+                <li class="nav-item" style="margin-left: -129px;"><a class="nav-link active" href="Profile.html" style="color: #ffffff;margin-left: 935px;font-size: 19px;margin-top: -15px;">Profile</a></li>
                 <li class="nav-item"><a class="nav-link" href="LikedImages.html" style="color: #ffffff;font-size: 19px;margin-top: -15px;">Liked Images</a></li>
-                <li class="nav-item"><a class="nav-link" href="Start.html" style="color: #ffffff;font-size: 19px;margin-top: -15px;">Logout</a></li>
+                <li class="nav-item"><a class="nav-link" href="AddImage.html" style="color: #ffffff;font-size: 19px;margin-top: -15px;margin-left: -678px;width: 198px;background: url(&quot;assets/img/upload_me_harder_daddy.png&quot;) no-repeat;background-size: contain;">&nbsp; &nbsp; &nbsp; &nbsp; Upload GIF</a></li>
+                <li
+                    class="nav-item"><a class="nav-link" href="Start.html" style="color: #ffffff;font-size: 19px;margin-top: -15px;">Logout</a></li>
             </ul>
         </div>
     </nav>
@@ -166,7 +167,9 @@ $x=7;
     <div class="card-group" style="margin-top: 50px;height: 270px;background: #595757;width: 100vw;border-width: 8px;border-color: #1f2021;">
         <div class="card" style="width: 640px;"><img class="card-img-top w-100 d-block" id="1" style="height: 320px;border-style: none;" src="<?php echo getImageURL($conn,1)[0]; ?>" >
             <div class="card-body" style="background: #475d62;width: 100vw;border: 1px solid #222222;">
-                <h4 class="card-title" style="color: #ffffff;font-size: 20px;text-align: left;">Username<i class="far fa-heart" data-bs-hover-animate="rubberBand" style="margin-left: 125px;"></i><span style="margin-left: 20px" id="1_likes" onclick="updateLikes(1)"><?php echo getImageURL($conn,1)[2]; ?> likes</span>
+                <h4 class="card-title" style="color: #ffffff;font-size: 20px;text-align: left;">Username<i class="far fa-heart" data-bs-hover-animate="rubberBand" style="margin-left: 125px;"></i>
+
+                <span style="margin-left: 20px" id="1_likes" onclick="updateLikes(1)"><?php echo getImageURL($conn,1)[2]; ?> likes</span>
 
                     <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh1(1)">
 
