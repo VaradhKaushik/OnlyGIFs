@@ -1,0 +1,21 @@
+.backdrop {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  z-index: 10;
+  visibility: hidden;
+}
+
+.backdrop-transition {
+  transition-duration: .2s;
+  transition-timing-function: cubic-bezier(.25,.8,.25,1);
+  transition-property: visibility;
+}
+
+.backdrop-dark {
+  background-color: rgba(0,0,0,.8);
+}
+
