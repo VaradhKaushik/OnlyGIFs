@@ -1,10 +1,8 @@
 <?php
 error_reporting(E_ALL);
 session_start();
-$cookie_name = "img_id";
-$cookie_value = 7;
-setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -62,7 +60,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
       if($conn === false){
         die("ERROR: Could not connect. " . $conn->connect_error);
       } 
-
+      $_SESSION["conn"] = $conn;
       $sql_liked = "CREATE TABLE IF NOT EXISTS LikedImages(
         uid VARCHAR(200) NOT NULL,
         imgid INT NOT NULL,
@@ -75,12 +73,13 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 ?>
 
       <?php
-      function getImageURL($conn,$num){
+      function getImageURL($num){
+      	$conn = $_SESSION["conn"];
         $sql2="SELECT * FROM images";
         $result_2=$conn->query($sql2);
-        $rows=$result_2->num_rows;
+        $rows=mysqli_num_rows($result_2);
         error_log(''.$rows);
-        $num=$num%$rows;
+        $num=intval($num%$rows);
         if($num==0)
           $num=$rows;
         $sql3 = "SELECT * FROM images where imgid='$num'";  
@@ -108,20 +107,74 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 
     <script type="text/javascript">
 
-    function refresh1(id_number){
-    <?php
-      $x = $_COOKIE['img_id']++;
-    ?>  
+    function refresh1(){
 
-      document.getElementById(String(id_number)).src = "<?php echo getImageURL($conn,$x)[0]; ?>";
-      var caption_id=String(id_number)+"_caption";
-      document.getElementById(caption_id).innerHTML="<?php echo getImageURL($conn,$x)[1]; ?>";
-      var user_id=String(id_number)+"_user";
-      document.getElementById(user_id).innerHTML="<?php echo getImageURL($conn,$x)[2]; ?>";
- 
-     
+    <?php
+    $x1 = rand(1,12);
+    echo 'alert('.$x1.');';
+	?>
+      document.getElementById(String(1)).src = "<?php echo getImageURL($x1)[0]; ?>";
+      var caption_id=String(1)+"_caption";
+      document.getElementById(caption_id).innerHTML="<?php echo getImageURL($x1)[1]; ?>";
+      var user_id=String(1)+"_user";
+      document.getElementById(user_id).innerHTML="<?php echo getImageURL($x1)[2]; ?>";
     }
 
+
+function refresh2(){
+    <?php
+    $x2 = rand(1,12);
+	?>
+      document.getElementById(String(2)).src = "<?php echo getImageURL($x2)[0]; ?>";
+      var caption_id=String(2)+"_caption";
+      document.getElementById(caption_id).innerHTML="<?php echo getImageURL($x2)[1]; ?>";
+      var user_id=String(2)+"_user";
+      document.getElementById(user_id).innerHTML="<?php echo getImageURL($x2)[2]; ?>";    
+    }
+
+function refresh3(){
+    <?php
+    $x3 = rand(1,12);
+	?>
+      document.getElementById(String(3)).src = "<?php echo getImageURL($x3)[0]; ?>";
+      var caption_id=String(3)+"_caption";
+      document.getElementById(caption_id).innerHTML="<?php echo getImageURL($x3)[1]; ?>";
+      var user_id=String(3)+"_user";
+      document.getElementById(user_id).innerHTML="<?php echo getImageURL($x3)[2]; ?>";    
+    }
+
+ function refresh4(){
+    <?php
+    $x4 = rand(1,12);
+	?>
+      document.getElementById(String(4)).src = "<?php echo getImageURL($x4)[0]; ?>";
+      var caption_id=String(4)+"_caption";
+      document.getElementById(caption_id).innerHTML="<?php echo getImageURL($x4)[1]; ?>";
+      var user_id=String(4)+"_user";
+      document.getElementById(user_id).innerHTML="<?php echo getImageURL($x4)[2]; ?>";    
+    }
+
+function refresh5(){
+    <?php
+    $x5 = rand(1,12);
+	?>
+      document.getElementById(String(5)).src = "<?php echo getImageURL($x5)[0]; ?>";
+      var caption_id=String(5)+"_caption";
+      document.getElementById(caption_id).innerHTML="<?php echo getImageURL($x5)[1]; ?>";
+      var user_id=String(5)+"_user";
+      document.getElementById(user_id).innerHTML="<?php echo getImageURL($x5)[2]; ?>";    
+    }
+
+function refresh6(){
+    <?php
+    $x6 = rand(1,12);
+	?>
+      document.getElementById(String(6)).src = "<?php echo getImageURL($x6)[0]; ?>";
+      var caption_id=String(6)+"_caption";
+      document.getElementById(caption_id).innerHTML="<?php echo getImageURL($x6)[1]; ?>";
+      var user_id=String(6)+"_user";
+      document.getElementById(user_id).innerHTML="<?php echo getImageURL($x6)[2]; ?>";    
+    }
     </script>
 
     <nav class="navbar navbar-light navbar-expand-md fixed-top" style="color: #ffffff;background: #322f2f;height: 50px;width: 100vw;">
@@ -136,85 +189,79 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
     </nav>
 
     <div class="card-group" style="margin-top: 50px;height: 270px;background: #595757;width: 100vw;border-width: 8px;border-color: #1f2021;">
-        <div class="card" style="width: 640px;"><img class="card-img-top w-100 d-block" id="1" style="height: 320px;border-style: none;" src="<?php echo getImageURL($conn,1)[0]; ?>" >
+        <div class="card" style="width: 640px;"><img class="card-img-top w-100 d-block" id="1" style="height: 320px;border-style: none;" src="<?php echo getImageURL(1)[0]; ?>" >
             <div class="card-body" style="background: #475d62;width: 100vw;border: 1px solid #222222;">
                 <h4 class="card-title" style="color: #ffffff;font-size: 20px;text-align: left;" >
 
-                <span id="1_user"><?php echo getImageURL($conn,1)[2]; ?></span>
+                <span id="1_user"><?php echo getImageURL(1)[2]; ?></span>
                     
-                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh1(1)">
+                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh1()">
 
-                    <i class="fa fa-refresh" data-bs-hover-animate="flash" style="align: center; "></i></button>
+                    <i class="fa fa-refresh" style="align: center; "></i></button>
 
                 </h4>
-                <p class="card-text" style="color: rgb(255,255,255);font-size: 16px;" id="1_caption"><?php echo getImageURL($conn,1)[1]; ?> </p>
-                <p hidden id="1_IMGID">1</p>
+                <p class="card-text" style="color: rgb(255,255,255);font-size: 16px;" id="1_caption"><?php echo getImageURL(1)[1]; ?> </p>
             </div>
         </div>
 
-        <div class="card" style="width: 640px;"><img class="card-img-top w-100 d-block" style="height: 320px;border-style: none;" id="2" src="<?php echo getImageURL($conn,2)[0]; ?>">
+        <div class="card" style="width: 640px;"><img class="card-img-top w-100 d-block" style="height: 320px;border-style: none;" id="2" src="<?php echo getImageURL(2)[0]; ?>">
             <div class="card-body" style="background: #475d62;border: 1px solid #222222;">
                 <h4 class="card-title" style="color: #ffffff;font-size: 20px;text-align: left;">
-                    <span id="2_user"><?php echo getImageURL($conn,2)[2]; ?></span>
+                    <span id="2_user"><?php echo getImageURL(2)[2]; ?></span>
                   
-                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh1(2)">
+                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh2()">
                     <i class="fa fa-refresh" data-bs-hover-animate="flash" style="align: center; "></i></button>
                 </h4>
-                <p class="card-text" style="color: rgb(255,255,255);font-size: 16px;" id="2_caption"><?php echo getImageURL($conn,2)[1]; ?></p>
-                <p hidden id="2_IMGID">2</p>
+                <p class="card-text" style="color: rgb(255,255,255);font-size: 16px;" id="2_caption"><?php echo getImageURL(2)[1]; ?></p>
             </div>
         </div>
 
-        <div class="card" style="width: 640px;"><img class="card-img-top w-100 d-block" style="height: 320px;border-style: none;" id="3" src="<?php echo getImageURL($conn,3)[0]; ?>">
+        <div class="card" style="width: 640px;"><img class="card-img-top w-100 d-block" style="height: 320px;border-style: none;" id="3" src="<?php echo getImageURL(3)[0]; ?>">
             <div class="card-body" style="background: #475d62;border: 1px solid #222222;">
                 <h4 class="card-title" style="color: #ffffff;font-size: 20px;text-align: left;">
-                    <span id="3_user"><?php echo getImageURL($conn,3)[2]; ?></span>
-                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh1(3)">
+                    <span id="3_user"><?php echo getImageURL(3)[2]; ?></span>
+                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh3()">
                     <i class="fa fa-refresh" data-bs-hover-animate="flash" style="align: center; "></i></button>
                 </h4>
-                <p class="card-text" style="color: rgb(255,255,255);font-size: 16px;" id="3_caption"><?php echo getImageURL($conn,3)[1]; ?><br></p>
-                <p hidden id="3_IMGID">3</p>
+                <p class="card-text" style="color: rgb(255,255,255);font-size: 16px;" id="3_caption"><?php echo getImageURL(3)[1]; ?><br></p>
             </div>
         </div>
     </div>
 
     <div class="card-group" style="margin-top: 200px;height: 270px;background: #595757;width: 100vw;border-width: 8px;border-color: #1f2021;">
-        <div class="card" style="width: 640px;"><img class="card-img-top w-100 d-block" style="height: 320px;border-style: none;" id="4" src="<?php echo getImageURL($conn,4)[0]; ?>">
+        <div class="card" style="width: 640px;"><img class="card-img-top w-100 d-block" style="height: 320px;border-style: none;" id="4" src="<?php echo getImageURL(4)[0]; ?>">
             <div class="card-body" style="background: #475d62;width: 100vw;border: 1px solid #222222;">
                 <h4 class="card-title" style="color: #ffffff;font-size: 20px;text-align: left;">
-                    <span id="4_user"><?php echo getImageURL($conn,4)[2]; ?></span>
+                    <span id="4_user"><?php echo getImageURL(4)[2]; ?></span>
                    
-                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh1(4)">
+                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh4()">
                     <i class="fa fa-refresh" data-bs-hover-animate="flash" style="align: center; "></i></button>
                 </h4>
-                <p class="card-text" style="color: rgb(255,255,255);font-size: 16px;" id="4_caption"><?php echo getImageURL($conn,4)[1]; ?></p>
-                <p hidden id="4_IMGID">4</p>
+                <p class="card-text" style="color: rgb(255,255,255);font-size: 16px;" id="4_caption"><?php echo getImageURL(4)[1]; ?></p>
             </div>
         </div>
 
-        <div class="card" style="width: 640px;"><img class="card-img-top w-100 d-block" style="height: 320px;border-style: none;" id="5" src="<?php echo getImageURL($conn,5)[0]; ?>">
+        <div class="card" style="width: 640px;"><img class="card-img-top w-100 d-block" style="height: 320px;border-style: none;" id="5" src="<?php echo getImageURL(5)[0]; ?>">
             <div class="card-body" style="background: #475d62;border: 1px solid #222222;">
                 <h4 class="card-title" style="color: #ffffff;font-size: 20px;text-align: left;">
-                    <span id="5_user"><?php echo getImageURL($conn,5)[2]; ?></span>
+                    <span id="5_user"><?php echo getImageURL(5)[2]; ?></span>
                     
-                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh1(5)">
+                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh5()">
                     <i class="fa fa-refresh" data-bs-hover-animate="flash" style="align: center; "></i></button>
                 </h4>
-                <p class="card-text" style="color: rgb(255,255,255);font-size: 16px;" id="5_caption"><?php echo getImageURL($conn,5)[1]; ?><br></p>
-                <p hidden id="5_IMGID">5</p>
+                <p class="card-text" style="color: rgb(255,255,255);font-size: 16px;" id="5_caption"><?php echo getImageURL(5)[1]; ?><br></p>
             </div>
         </div>
 
-        <div class="card" style="width: 640px;"><img class="card-img-top w-100 d-block" style="height: 320px;border-style: none;" id="6" src="<?php echo getImageURL($conn,6)[0]; ?>">
+        <div class="card" style="width: 640px;"><img class="card-img-top w-100 d-block" style="height: 320px;border-style: none;" id="6" src="<?php echo getImageURL(6)[0]; ?>">
             <div class="card-body" style="background: #475d62;border: 1px solid #222222;">
                 <h4 class="card-title" style="color: #ffffff;font-size: 20px;text-align: left;">
-                    <span id="6_user"><?php echo getImageURL($conn,6)[2]; ?></span>
+                    <span id="6_user"><?php echo getImageURL(6)[2]; ?></span>
                     
-                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh1(6)">
+                    <button class="btn btn-primary" type="button" style="text-align: center; margin-left: 66px;" onclick="refresh6()">
                     <i class="fa fa-refresh" data-bs-hover-animate="flash" style="align: center; "></i></button>
                 </h4>
-                <p class="card-text" style="color: rgb(255,255,255);font-size: 16px;" id="6_caption"><?php echo getImageURL($conn,6)[1]; ?><br></p>
-                <p hidden id="6_IMGID">6</p>
+                <p class="card-text" style="color: rgb(255,255,255);font-size: 16px;" id="6_caption"><?php echo getImageURL(6)[1]; ?><br></p>
             </div>
         </div>
     </div>
